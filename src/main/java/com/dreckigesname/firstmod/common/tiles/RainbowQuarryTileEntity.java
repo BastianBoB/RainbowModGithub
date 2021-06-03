@@ -17,6 +17,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.util.LazyOptional;
@@ -106,7 +107,7 @@ public class RainbowQuarryTileEntity extends TileEntity implements ITickableTile
 						world.sendParticles(ParticleTypes.DRAGON_BREATH, blockPos.getX() + 0.5D, blockPos.getY() + 1.5D, blockPos.getZ() + 0.5D, 1, 0.0D, 0.0D, 0.0D, 0.0D);
 
 						if (!(block == Blocks.BEDROCK || (hasOreModifier && !Tags.Blocks.ORES.contains(block)))) {
-							insertItems(world, blockPos);
+							insertItems(blockPos);
 							world.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 3);
 						}
 
@@ -129,8 +130,9 @@ public class RainbowQuarryTileEntity extends TileEntity implements ITickableTile
 		}
 	}
 	
-	private void insertItems(ServerWorld world, BlockPos blockPos) {
-		List<ItemStack> items = Block.getDrops(world.getBlockState(blockPos), world, blockPos, world.getBlockEntity(getBlockPos()), null, toolStack);
+	private void insertItems(BlockPos blockPos) {
+		World world = this.getLevel();
+		List<ItemStack> items = Block.getDrops(world.getBlockState(blockPos), (ServerWorld) world, blockPos, world.getBlockEntity(getBlockPos()), null, toolStack);
 		TileEntity chest = world.getBlockEntity(getBlockPos().above());
 		if (chest != null) {
 			LazyOptional<?> handler = chest.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
@@ -140,7 +142,7 @@ public class RainbowQuarryTileEntity extends TileEntity implements ITickableTile
 						for (int j = 0; j < ((InvWrapper) ItemStackHandler).getSlots(); ++j) {
 							stack = ((InvWrapper) ItemStackHandler).insertItem(j, stack, false);
 						}
-						ItemEntity itemEntity = new ItemEntity((ServerWorld) world, blockPos.getX() + 0.5D, blockPos.getY() + 2, blockPos.getZ() + 0.5D, stack);
+						ItemEntity itemEntity = new ItemEntity(world, this.getBlockPos().getX() + 0.5D, this.getBlockPos().getY() + 2, this.getBlockPos().getZ() + 0.5D, stack);
 						itemEntity.setDeltaMovement(0.0D, 0.0D, 0.0D);
 						world.addFreshEntity(itemEntity);
 					});
@@ -148,7 +150,7 @@ public class RainbowQuarryTileEntity extends TileEntity implements ITickableTile
 			});
 		} else {
 			items.forEach(stack -> {
-				ItemEntity itemEntity = new ItemEntity((ServerWorld) world, blockPos.getX() + 0.5D, blockPos.getY() + 2, blockPos.getZ() + 0.5D, stack);
+				ItemEntity itemEntity = new ItemEntity(world, this.getBlockPos().getX() + 0.5D, this.getBlockPos().getY() + 2, this.getBlockPos().getZ() + 0.5D, stack);
 				itemEntity.setDeltaMovement(0.0D, 0.0D, 0.0D);
 				world.addFreshEntity(itemEntity);
 			});

@@ -115,6 +115,10 @@ public class RainbowAltarTileEntity extends LockableLootTileEntity implements IT
 	    	for (int i = 0; i < totalBlocks; i++) {
 				setBlock(x + BlockPosX[i], y + BlockPosY[i], z + BlockPosZ[i], replaceBlock[i], correctBlock[i], worldIn);
 			}
+
+	    	if(isStructureCorrect()){
+				startRitual(player);
+			}
 		}
 	}
 
