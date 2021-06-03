@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "firstmod:rainbow_crystal"
+        }
+    },
+    "result": {
+        "item": "firstmod:rainbow_block",
+        "count": 1
+    }
+}

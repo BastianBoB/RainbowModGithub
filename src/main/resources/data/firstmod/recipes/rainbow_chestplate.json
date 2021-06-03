@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"r r",
+		"rnr",
+		"rrr"
+	],
+	"key": {
+		"r": {
+			"item": "firstmod:charged_rainbow_crystal"
+		},
+		"n": {
+			"item": "minecraft:nether_star"
+		}
+	},
+	"result": {
+		"item": "firstmod:rainbow_chestplate",
+		"count": 1
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "firstmod:tough_rainbow_crystal"
+    },
+    "result": "firstmod:charged_rainbow_crystal",
+    "experience": 0.1,
+    "cookingtime": 120
+}

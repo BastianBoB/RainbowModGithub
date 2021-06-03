@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"rnr",
+		"r r",
+		"r r"
+	],
+	"key": {
+		"r": {
+			"item": "firstmod:charged_rainbow_crystal"
+		},
+		"n": {
+			"item": "minecraft:nether_star"
+		}
+	},
+	"result": {
+		"item": "firstmod:rainbow_leggings",
+		"count": 1
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=north": { "model": "firstmod:block/rainbow_quarry" },
+        "facing=south": { "model": "firstmod:block/rainbow_quarry", "y": 180 },
+        "facing=west":  { "model": "firstmod:block/rainbow_quarry", "y": 270 },
+        "facing=east":  { "model": "firstmod:block/rainbow_quarry", "y": 90 }
+    }
+}
+ 

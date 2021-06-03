@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=north": { "model": "firstmod:block/rainbow_altar" },
+        "facing=south": { "model": "firstmod:block/rainbow_altar", "y": 180 },
+        "facing=west":  { "model": "firstmod:block/rainbow_altar", "y": 270 },
+        "facing=east":  { "model": "firstmod:block/rainbow_altar", "y": 90 }
+    }
+}
+ 

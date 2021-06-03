@@ -1,0 +1,19 @@
+{
+  "variants" : {
+    "facing=north" : {
+      "model": "firstmod:block/face_block"
+    },
+    "facing=south": {
+       "model": "firstmod:block/face_block",
+      "y": 180
+    },
+    "facing=east" : {
+      "model": "firstmod:block/face_block",
+      "y" : 90
+    },
+    "facing=west" : {
+       "model": "firstmod:block/face_block",
+      "y" : 270
+    }
+  }
+}

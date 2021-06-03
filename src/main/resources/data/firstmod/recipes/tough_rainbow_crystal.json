@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#d#",
+		" # "
+	],
+	"key": {
+		"#": {
+			"item": "firstmod:rainbow_crystal"
+		},
+		"d": {
+			"item": "minecraft:diamond"
+		}
+	},
+	"result": {
+		"item": "firstmod:tough_rainbow_crystal",
+		"count": 1
+	}
+}

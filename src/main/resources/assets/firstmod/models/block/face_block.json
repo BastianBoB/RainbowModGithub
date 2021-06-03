@@ -1,0 +1,11 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"up": "firstmod:blocks/face_up_block",
+		"down": "firstmod:blocks/face_down_block",
+		"north": "firstmod:blocks/face_front_block",
+		"south": "firstmod:blocks/face_back_block",
+		"west": "firstmod:blocks/face_left_block",
+		"east": "firstmod:blocks/face_right_block"
+	}
+}
